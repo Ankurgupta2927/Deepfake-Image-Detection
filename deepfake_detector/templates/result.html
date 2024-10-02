@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detection Result</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        h1 {
+            color: #333;
+            font-size: 6vw;
+            margin-bottom: 20px;
+        }
+        .result {
+            font-size: 8vw;
+            font-weight: bold;
+            color: #007BFF;
+            margin-bottom: 30px;
+        }
+        .real {
+            color: #28a745;
+        }
+        .fake {
+            color: #dc3545;
+        }
+        a {
+            text-decoration: none;
+            background-color: #007BFF;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 4vw;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+        }
+        a:hover {
+            background-color: #0056b3;
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 3vw;
+            color: #888;
+        }
+
+        /* Media query for larger screens (desktops) */
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 24px;
+            }
+            .result {
+                font-size: 28px;
+            }
+            a {
+                font-size: 16px;
+            }
+            footer {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Detection Result</h1>
+        <div class="result {{ 'real' if result == 'real' else 'fake' }}">
+            {{ result.capitalize() }}
+        </div>
+        <a href="{{ url_for('index') }}">Try Again</a>
+        <footer>"Deepfake Image Detection 🔍🤖✨"</footer>
+    </div>
+</body>
+</html>
