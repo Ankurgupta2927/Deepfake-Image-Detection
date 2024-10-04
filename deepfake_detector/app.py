@@ -44,5 +44,5 @@ if __name__ == '__main__':
     if not os.path.exists('uploads'):
         os.makedirs('uploads')
     
-    # Run the app on port 5001
-    app.run(debug=True, port=5001)
+    # Run the app 
+    app.run(debug=True,host='0.0.0.0', port=5000)
